@@ -1,0 +1,10 @@
+# Spring Boot / Maven
+target/
+.mvn/wrapper/maven-wrapper.jar
+# IDEs
+.idea/
+.vscode/
+*.iml
+# Sistema
+.DS_Store
+Thumbs.db

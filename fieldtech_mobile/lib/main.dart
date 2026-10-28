@@ -25,7 +25,7 @@ class FieldTechApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF0284C7),
+          seedColor: const Color.fromARGB(255, 255, 171, 227),
           brightness: Brightness.light,
         ),
       ),
@@ -82,7 +82,9 @@ class _IncidenciasScreenState extends State<IncidenciasScreen> {
               ? '¡Sincronización exitosa! ($total registros enviados).'
               : 'No hay registros pendientes o el servidor no respondió.',
         ),
-        backgroundColor: total > 0 ? Colors.green[700] : Colors.orange[800],
+        backgroundColor: total > 0
+            ? const Color.fromARGB(255, 142, 56, 123)
+            : const Color.fromARGB(255, 121, 17, 69),
       ),
     );
   }
@@ -148,7 +150,10 @@ class _IncidenciasScreenState extends State<IncidenciasScreen> {
               child: Text(
                 'No hay inspecciones registradas.\nPresione + para crear una.',
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey, fontSize: 16),
+                style: TextStyle(
+                  color: Color.fromARGB(255, 134, 16, 95),
+                  fontSize: 16,
+                ),
               ),
             )
           : ListView.builder(
@@ -165,13 +170,13 @@ class _IncidenciasScreenState extends State<IncidenciasScreen> {
                   child: ListTile(
                     leading: CircleAvatar(
                       backgroundColor: sincronizado
-                          ? Colors.green[100]
-                          : Colors.amber[100],
+                          ? const Color.fromARGB(255, 252, 174, 235)
+                          : const Color.fromARGB(255, 255, 223, 241),
                       child: Icon(
                         sincronizado ? Icons.cloud_done : Icons.cloud_off,
                         color: sincronizado
-                            ? Colors.green[800]
-                            : Colors.amber[900],
+                            ? const Color.fromARGB(255, 255, 138, 210)
+                            : const Color.fromARGB(255, 105, 33, 75),
                       ),
                     ),
                     title: Text(
@@ -186,8 +191,8 @@ class _IncidenciasScreenState extends State<IncidenciasScreen> {
                       style: TextStyle(
                         fontSize: 12,
                         color: sincronizado
-                            ? Colors.green[700]
-                            : Colors.amber[900],
+                            ? const Color.fromARGB(255, 255, 162, 205)
+                            : const Color.fromARGB(255, 184, 59, 111),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -260,7 +265,7 @@ class _NuevaIncidenciaModalState extends State<NuevaIncidenciaModal> {
           content: Text(
             'Debe ingresar un título y capturar las coordenadas GPS.',
           ),
-          backgroundColor: Colors.red,
+          backgroundColor: Color.fromARGB(255, 219, 72, 183),
         ),
       );
       return;
